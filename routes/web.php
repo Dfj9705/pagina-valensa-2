@@ -13,3 +13,6 @@ Route::view('/mision-vision', 'pages.mission-vision')
 
 Route::view('/productos', 'pages.products')
     ->name('products.index');
+
+Route::view('/contacto', 'pages.contact')
+    ->name('contact');

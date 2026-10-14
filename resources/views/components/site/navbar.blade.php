@@ -42,7 +42,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
-                        href="{{ url('/contacto') }}">
+                        href="{{ route('contact') }}">
                         Contáctenos
                     </a>
                 </li>

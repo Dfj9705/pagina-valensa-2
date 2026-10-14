@@ -21,24 +21,34 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#nosotros">
-                        Nosotros
+                    <a class="nav-link {{ request()->routeIs('mission-vision') ? 'active' : '' }}"
+                        href="{{ route('mission-vision') }}">
+                        Misión y Visión
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#productos">
+                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">
+                        Quiénes somos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"
+                        href="{{ route('products.index') }}">
                         Productos
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#contacto">
-                        Contacto
+                    <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
+                        href="{{ url('/contacto') }}">
+                        Contáctenos
                     </a>
                 </li>
 
             </ul>
+
 
         </div>
     </div>

@@ -70,3 +70,151 @@ body {
     }
 }
 
+
+
+/* ================================
+   VALENSA - HOME
+================================ */
+
+.valensa-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 620px;
+    padding: 100px 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 31, 70, .95) 0%,
+            rgba(30, 45, 88, .83) 48%,
+            rgba(30, 45, 88, .35) 100%
+        ),
+        url('/images/valensa/banner-valensa.jpeg')
+        center / cover no-repeat;
+}
+
+.valensa-eyebrow {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 30px;
+    color: #f2b705;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.valensa-hero h1 {
+    line-height: 1.1;
+    max-width: 800px;
+}
+
+.valensa-hero .lead {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.valensa-hero .btn {
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform .25s ease;
+}
+
+.valensa-hero .btn:hover {
+    transform: translateY(-3px);
+}
+
+/* SERVICIOS */
+
+.valensa-services {
+    background: #f7f9fc;
+}
+
+.section-eyebrow {
+    color: #334fa0;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #e9edf3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(20,31,70,.05);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(20,31,70,.12);
+}
+
+.service-card-image {
+    height: 230px;
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-card-body {
+    padding: 30px;
+}
+
+.service-card-body h3 {
+    color: #2f3a73;
+    line-height: 1.35;
+}
+
+.service-card-body p {
+    min-height: 55px;
+    line-height: 1.7;
+}
+
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #334fa0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.service-card-link:hover {
+    color: #c89416;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 767.98px) {
+    .valensa-hero {
+        min-height: 520px;
+        padding: 75px 0;
+        background-position: 60% center;
+    }
+
+    .valensa-hero h1 {
+        font-size: clamp(2.3rem, 8vw, 3.5rem);
+    }
+
+    .service-card-image {
+        height: 210px;
+    }
+
+    .service-card-body p {
+        min-height: auto;
+    }
+}
+

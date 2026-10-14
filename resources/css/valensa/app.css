@@ -308,3 +308,80 @@ body {
     }
 }
 
+
+
+/* CATÁLOGO */
+
+.catalogo-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .25s ease,
+                box-shadow .25s ease;
+}
+
+.catalogo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(28, 37, 80, .10);
+}
+
+.catalogo-card-image {
+    position: relative;
+    height: 230px;
+    background: #f3f5fa;
+}
+
+.catalogo-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #8c94a7;
+    font-weight: 600;
+}
+
+.catalogo-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.catalogo-badge.disponible {
+    background: #e4f7ed;
+    color: #167347;
+}
+
+.catalogo-badge.agotado {
+    background: #fde9e9;
+    color: #b42318;
+}
+
+.catalogo-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.catalogo-card-body h3 {
+    color: #2f3a73;
+    line-height: 1.4;
+}
+
+.catalogo-card-body p {
+    line-height: 1.7;
+}
+
+@media (max-width: 767.98px) {
+    .catalogo-card-image {
+        height: 200px;
+    }
+}
+

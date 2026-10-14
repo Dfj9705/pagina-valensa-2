@@ -3,10 +3,32 @@
 @section('title', 'Productos | Servicios Valensa')
 
 @section('content')
-    <section class="container py-5">
-        <h1 class="fw-bold">Nuestros productos</h1>
-        <p class="text-muted">
-            Próximamente integraremos nuestro catálogo.
-        </p>
+
+    <section class="valensa-page-header">
+        <div class="container text-center">
+
+            <span class="valensa-eyebrow">
+                NUESTRO CATÁLOGO
+            </span>
+
+            <h1 class="display-4 fw-bold text-white mt-3">
+                Productos
+            </h1>
+
+            <p class="text-white-50 mt-3">
+                Equipos, herramientas y accesorios
+                para perforaciones.
+            </p>
+
+        </div>
     </section>
+
+    <section class="py-5">
+        <div class="container py-lg-4">
+
+            <livewire:catalogo-productos />
+
+        </div>
+    </section>
+
 @endsection

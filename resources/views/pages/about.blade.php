@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Quiénes somos | Servicios Valensa')
-
+@section('meta_description', 'Conoce Servicios Valensa, empresa especializada en herramientas para perforaciones, accesorios industriales y estudios de suelo.')
 @section('content')
 
     <section class="valensa-page-header">

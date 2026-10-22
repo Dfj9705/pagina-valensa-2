@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Productos | Servicios Valensa')
-
+@section('meta_description', 'Explora el catálogo de maquinaria, herramientas y accesorios para perforación de pozos de Servicios Valensa.')
 @section('content')
 
     <section class="valensa-page-header">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contacto | Servicios Valensa')
-
+@section('meta_description', 'Contacta a Servicios Valensa para solicitar información sobre maquinaria, accesorios para perforaciones y estudios de suelo.')
 @section('content')
 
     <section class="valensa-page-header">

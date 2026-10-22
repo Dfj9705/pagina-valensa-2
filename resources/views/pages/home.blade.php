@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('title', 'Inicio | Servicios Valensa')
-
+@section('meta_description', 'Servicios Valensa ofrece maquinaria, herramientas, accesorios para perforación de pozos y soluciones especializadas en estudios de suelo.')
 @section('content')
 
     {{-- HERO --}}

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Misión y Visión | Servicios Valensa')
-
+@section('meta_description', 'Conoce la misión y visión de Servicios Valensa y nuestro compromiso con la calidad y las soluciones para perforaciones.')
 @section('content')
 
     <section class="valensa-page-header">

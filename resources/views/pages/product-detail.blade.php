@@ -2,6 +2,16 @@
 
 @section('title', $producto->pro_nombre . ' | Servicios Valensa')
 
+@section(
+    'meta_description',
+    \Illuminate\Support\Str::limit(
+        trim(strip_tags($producto->pro_descripcion ?? '')) ?:
+        'Consulta información y disponibilidad de ' . $producto->pro_nombre . ' en Servicios Valensa.',
+        155,
+        ''
+    )
+)
+
 @section('content')
 
     <section class="py-4 bg-white border-bottom">
@@ -40,7 +50,7 @@
 
                                     @foreach($imagenes as $imagen)
                                         <div class="carousel-item
-                                                                {{ $loop->first ? 'active' : '' }}">
+                                                                            {{ $loop->first ? 'active' : '' }}">
 
                                             <div class="producto-imagen-principal">
                                                 <img src="{{ $imagen }}"

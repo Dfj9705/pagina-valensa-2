@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SitemapController;
 Route::view('/', 'pages.home')
     ->name('home');
 
@@ -21,3 +21,21 @@ Route::view('/contacto', 'pages.contact')
 Route::get('/productos/{id}', [ProductoController::class, 'show'])
     ->whereNumber('id')
     ->name('products.show');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])
+    ->name('sitemap');
+
+
+Route::get('/robots.txt', function () {
+    if (!app()->environment('production')) {
+        $contenido = "User-agent: *\nDisallow: /\n";
+    } else {
+        $contenido = "User-agent: *\n";
+        $contenido .= "Allow: /\n";
+        $contenido .= "Sitemap: " . route('sitemap') . "\n";
+    }
+
+    return response($contenido, 200)
+        ->header('Content-Type', 'text/plain; charset=UTF-8');
+})->name('robots');
+

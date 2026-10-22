@@ -233,7 +233,7 @@ body {
             rgba(28, 37, 80, .96),
             rgba(47, 58, 115, .85)
         ),
-        url('/images/valensa/banner-valensa.jpeg')
+        var(--valensa-banner)
         center / cover no-repeat;
 }
 

@@ -37,9 +37,37 @@
                         <div class="catalogo-card-image">
                             {{-- Imagen provisional hasta validar
                             la estructura de pro_imagenes --}}
-                            <div class="catalogo-image-placeholder">
-                                <span>Servicios Valensa</span>
-                            </div>
+
+                            @php
+                                $imagenes = $producto->pro_imagenes ?? [];
+                                $primeraImagen = is_array($imagenes)
+                                    ? ($imagenes[0] ?? null)
+                                    : null;
+
+                                $mediaUrl = rtrim(
+                                    config('services.valensa.media_url', ''),
+                                    '/'
+                                );
+
+                                $imagenUrl = $primeraImagen && $mediaUrl
+                                    ? $mediaUrl . '/' . ltrim($primeraImagen, '/')
+                                    : null;
+                            @endphp
+
+                            @if ($imagenUrl)
+                                <img src="{{ $imagenUrl }}" alt="{{ $producto->pro_nombre }}" class="catalogo-producto-img"
+                                    loading="lazy"
+                                    onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+
+                                <div class="catalogo-image-placeholder" style="display: none;">
+                                    <span>Imagen no disponible</span>
+                                </div>
+                            @else
+                                <div class="catalogo-image-placeholder">
+                                    <span>Imagen no disponible</span>
+                                </div>
+                            @endif
+
 
                             <span class="catalogo-badge {{ $disponible ? 'disponible' : 'agotado' }}">
                                 {{ $disponible ? 'Disponible' : 'Agotado' }}
@@ -51,9 +79,14 @@
                                 SKU: {{ $producto->pro_sku ?: 'N/D' }}
                             </small>
 
+
                             <h3 class="h5 fw-bold mt-2">
-                                {{ $producto->pro_nombre }}
+                                <a href="{{ route('products.show', $producto->pro_id) }}"
+                                    class="text-decoration-none text-reset">
+                                    {{ $producto->pro_nombre }}
+                                </a>
                             </h3>
+
 
                             <p class="text-muted small">
                                 {{ \Illuminate\Support\Str::limit(
@@ -62,7 +95,12 @@
             ) }}
                             </p>
 
+
                             <div class="mt-auto">
+                                <a href="{{ route('products.show', $producto->pro_id) }}"
+                                    class="btn btn-outline-primary w-100 mb-2">
+                                    Ver detalles
+                                </a>
                                 <a href="https://wa.me/50253682021?{{ http_build_query(['text' => 'Hola, deseo información sobre el producto: ' . $producto->pro_nombre . ' (SKU: ' . $producto->pro_sku . ')']) }}"
                                     target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">
                                     Consultar producto

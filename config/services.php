@@ -40,4 +40,8 @@ return [
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),
     ],
 
+    'valensa' => [
+        'media_url' => env('VALENSA_MEDIA_URL'),
+    ],
+
 ];

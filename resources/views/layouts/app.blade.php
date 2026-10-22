@@ -1,3 +1,8 @@
+<style>
+    :root {
+        --valensa-banner: url('{{ asset('images/valensa/banner-valensa.jpeg') }}');
+    }
+</style>
 <!DOCTYPE html>
 <html lang="es">
 

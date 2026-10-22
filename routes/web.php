@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.home')
@@ -16,3 +17,7 @@ Route::view('/productos', 'pages.products')
 
 Route::view('/contacto', 'pages.contact')
     ->name('contact');
+
+Route::get('/productos/{id}', [ProductoController::class, 'show'])
+    ->whereNumber('id')
+    ->name('products.show');
